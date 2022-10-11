@@ -5,6 +5,7 @@ import QuizCard from './QuizCard';
 const Quizzes = () => {
     const quizzes = useLoaderData();
     const [correctCount, setCorrectCount] = useState(0);
+    const [wrongCount, setWrongCount] = useState(0);
 
     const {
         data: { name, questions },
@@ -16,13 +17,17 @@ const Quizzes = () => {
             <div className="">
                 <h2 className="text-center text-5xl  p-3">quiz for {name}</h2>
             </div>
-            <p>{correctCount}</p>
+            <div className="flex justify-between">
+                <p>{correctCount}</p>
+                <p>{wrongCount}</p>
+            </div>
             <h4 className="text-xl">
                 {questions.map((question) => (
                     <QuizCard
                         key={question.id}
                         options={question}
                         setCorrectCount={setCorrectCount}
+                        setWrongCount={setWrongCount}
                     />
                 ))}
             </h4>

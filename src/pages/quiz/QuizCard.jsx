@@ -1,18 +1,23 @@
 /* eslint-disable consistent-return */
-/* eslint-disable no-unused-vars */
+
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
-
-const QuizCard = ({ options: { options, correctAnswer, question }, setCorrectCount }) => {
+const QuizCard = ({
+    options: { options, correctAnswer, question },
+    setCorrectCount,
+    setWrongCount,
+}) => {
     const [quiz, setQuiz] = useState('');
     const [visibility, setVisibility] = useState(false);
+    const [checked, setChecked] = useState(false);
 
     // const [wrongCount, setWrongCount] = useState(0);
 
     const changeHandler = (event) => {
+        setChecked(true);
         event.preventDefault();
         setQuiz(event.target.value);
 
@@ -21,6 +26,7 @@ const QuizCard = ({ options: { options, correctAnswer, question }, setCorrectCou
             setCorrectCount((prev) => prev + 1);
         } else {
             toast.error('wrong!');
+            setWrongCount((prev) => prev + 1);
         }
     };
     const clickHandler = () => {
@@ -38,14 +44,13 @@ const QuizCard = ({ options: { options, correctAnswer, question }, setCorrectCou
             <div className="grid grid-cols-2 gap-5 border">
                 {options.map((option, index) => (
                     <div key={Math.random()}>
-                        <div className="hover:bg-slate-400">
+                        <div className="hover:bg-slate-400" onChange={!checked && changeHandler}>
                             <input
                                 id={options[index]}
                                 type="radio"
                                 name={question}
                                 value={option}
                                 checked={quiz === options[index]}
-                                onChange={changeHandler}
                             />
                             <label htmlFor={options[index]}>{option}</label>
                         </div>
