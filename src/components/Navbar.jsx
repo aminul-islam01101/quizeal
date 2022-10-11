@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => (
     <div>
@@ -50,7 +50,7 @@ const Navbar = () => (
                     <li>
                         <NavLink to="/home">Home</NavLink>
                     </li>
-                  
+
                     <li>
                         <NavLink to="/statistics">Statistics</NavLink>
                     </li>
@@ -75,10 +75,14 @@ const Navbar = () => (
                         className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                     >
                         <li>
-                            <a className="justify-between hidden">Login</a>
+                            <Link to="/login" className="justify-between hidden">
+                                Login
+                            </Link>
                         </li>
                         <li>
-                            <a className="justify-between">Signup</a>
+                            <Link to="/signup" className="justify-between">
+                                Signup
+                            </Link>
                         </li>
 
                         <li>

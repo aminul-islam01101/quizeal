@@ -4,6 +4,7 @@ import Error from '../pages/Error';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login';
 import Quizzes from '../pages/quiz/Quizzes';
+import SignUp from '../pages/SignUp';
 import Statistics from '../pages/Statistics';
 
 import Root from './Root';
@@ -30,6 +31,7 @@ export const router = createBrowserRouter(
             <Route path="/statistics" element={<Statistics />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
         </Route>
     )
 );
