@@ -12,12 +12,10 @@ const QuizCard = ({
 }) => {
     const [quiz, setQuiz] = useState('');
     const [visibility, setVisibility] = useState(false);
-    const [checked, setChecked] = useState(false);
-
-    // const [wrongCount, setWrongCount] = useState(0);
+    const [disabled, setDisabled] = useState(false);
 
     const changeHandler = (event) => {
-        setChecked(true);
+        setDisabled(true);
         event.preventDefault();
         setQuiz(event.target.value);
 
@@ -44,13 +42,16 @@ const QuizCard = ({
             <div className="grid grid-cols-2 gap-5 border">
                 {options.map((option, index) => (
                     <div key={Math.random()}>
-                        <div className="hover:bg-slate-400" onChange={!checked && changeHandler}>
+                        <div className="hover:bg-slate-400 flex items-center">
                             <input
+                                className="radio radio-primary disabled:bg-red-600 text-lime-500"
                                 id={options[index]}
                                 type="radio"
                                 name={question}
                                 value={option}
                                 checked={quiz === options[index]}
+                                disabled={disabled}
+                                onChange={changeHandler}
                             />
                             <label htmlFor={options[index]}>{option}</label>
                         </div>
