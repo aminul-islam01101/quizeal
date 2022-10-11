@@ -1,4 +1,4 @@
-async function dataLoader(params) {
+async function Loader(params) {
     let res;
     if (params) {
         res = await fetch(`https://openapi.programming-hero.com/api/quiz/${params}`);
@@ -13,12 +13,4 @@ async function dataLoader(params) {
     return rootLoader;
 }
 
-const Loader = async () => {
-    const topics = await dataLoader();
-    const topic = await dataLoader(1);
-    const quizTopics = topics.data;
-    const quizTopic = topic.data;
-
-    return { quizTopics, quizTopic };
-};
 export default Loader;

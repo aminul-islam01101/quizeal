@@ -4,12 +4,12 @@ import Navbar from '../components/Navbar';
 import { QuizContext } from '../Contexts/QuizContext';
 
 const Root = () => {
-    const { quizTopics, quizTopic } = useLoaderData();
+    const quizTopics = useLoaderData();
 
     return (
         // eslint-disable-next-line react/jsx-no-constructed-context-values
-        <QuizContext.Provider value={[quizTopics, quizTopic]}>
-            <div className="min-h-screen">
+        <QuizContext.Provider value={quizTopics}>
+            <div className="min-h-screen container">
                 <Navbar />
                 <Outlet />
             </div>

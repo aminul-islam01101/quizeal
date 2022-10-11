@@ -3,19 +3,29 @@ import Blogs from '../pages/Blogs';
 import Error from '../pages/Error';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login';
-import Quiz from '../pages/quiz/Quiz';
+import Quizzes from '../pages/quiz/Quizzes';
 import Statistics from '../pages/Statistics';
-import Loader from '../Utilities/DataLoader';
 
 import Root from './Root';
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/" element={<Root />} errorElement={<Error />} loader={Loader}>
+        <Route
+            path="/"
+            element={<Root />}
+            errorElement={<Error />}
+            loader={async () => fetch(`https://openapi.programming-hero.com/api/quiz`)}
+        >
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-           
-            <Route path="/home/:id" element={<Quiz />} />
+
+            <Route
+                path="/home/:id"
+                element={<Quizzes />}
+                loader={async ({ params }) =>
+                    fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`)
+                }
+            />
 
             <Route path="/statistics" element={<Statistics />} />
             <Route path="/blogs" element={<Blogs />} />
