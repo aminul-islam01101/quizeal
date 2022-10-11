@@ -1,12 +1,20 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
 
 import Navbar from '../components/Navbar';
+import { QuizContext } from '../Contexts/QuizContext';
 
-const Root = () => (
-    <div className="min-h-screen">
-        <Navbar />
-        <Outlet />
-    </div>
-);
+const Root = () => {
+    const { quizTopics, quizTopic } = useLoaderData();
+
+    return (
+        // eslint-disable-next-line react/jsx-no-constructed-context-values
+        <QuizContext.Provider value={[quizTopics, quizTopic]}>
+            <div className="min-h-screen">
+                <Navbar />
+                <Outlet />
+            </div>
+        </QuizContext.Provider>
+    );
+};
 
 export default Root;
