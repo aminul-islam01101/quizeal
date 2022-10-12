@@ -7,7 +7,7 @@ const Blogs = () => (
         <div>
             <div
                 className="hero min-h-screen mt-10"
-                style={{ backgroundImage: `url('/public/blog.webp')` }}
+                style={{ backgroundImage: `url('/blog.webp')` }}
             >
                 <div className="hero-overlay bg-opacity-60" />
                 <div className="hero-content text-center text-neutral-content">
@@ -43,9 +43,9 @@ const Blogs = () => (
                                     <div className="md:flex md:flex-row items-center ">
                                         <div className="md:w-96 w-36 flex justify-center items-center mb-6 lg:mb-0 mx-auto md:mx-0">
                                             <img
-                                                src="../../../public/author.jpg"
+                                                src="/author.jpg"
                                                 className="rounded-full shadow-md"
-                                                alt="woman avatar"
+                                                alt="avatar"
                                             />
                                         </div>
                                         <div className="md:ml-6">
