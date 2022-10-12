@@ -11,7 +11,7 @@ const Quizzes = () => {
     const {
         data: { name, questions },
     } = quizzes;
-    console.log(questions.length);
+    const successRate = ((correctCount / (correctCount + wrongCount)) * 100).toFixed(0)
 
     return (
         <div>
@@ -40,20 +40,20 @@ const Quizzes = () => {
                 <div className="w-full p-3 rounded bg-sky-300/90 flex justify-between items-center">
                     <div>
                         <p>
-                            Correct answer:{' '}
+                            Correct answer:
                             <span className="font-bold ml-3 text-green-700">
                                 {correctCount} Nos
                             </span>
                         </p>
                         <p>
-                            Wrong answer:{' '}
+                            Wrong answer:
                             <span className="font-bold ml-3 text-rose-500">{wrongCount} Nos</span>
                         </p>
                         <p>
                             success rate:
                             <span className="text-green-700 font-bold ml-3">
-                                {((correctCount / (correctCount + wrongCount)) * 100).toFixed(0) ||
-                                    0}
+                                {wrongCount || correctCount ? successRate : 0
+                                    }
                                 %
                             </span>
                         </p>
