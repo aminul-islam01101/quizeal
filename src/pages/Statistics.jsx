@@ -14,23 +14,16 @@ export default function App() {
     });
 
     return (
-        <BarChart
-            width={500}
-            height={300}
-            data={data}
-            margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-            }}
-        >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis dataKey="total" />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="total" fill="#8884d8" background={{ fill: '#eee' }} />
-        </BarChart>
+        <div className="grid place-items-center text-center bg-slate-300">
+            <h2 className='mt-20'> Quiz Topics Vs Total question Visual representation</h2>
+            <BarChart className="mt-20" width={350} height={300} data={data}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis className="text-white" dataKey="name" />
+                <YAxis dataKey="total" />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="total" fill="#a42beb" background={{ fill: '#eee' }} />
+            </BarChart>
+        </div>
     );
 }

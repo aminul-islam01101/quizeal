@@ -37,7 +37,6 @@ const Home = () => {
                     <TopicsCard key={item.id} item={item} />
                 ))}
             </div>
-          
         </div>
     );
 };
