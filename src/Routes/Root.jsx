@@ -8,16 +8,15 @@ const Root = () => {
     const quizTopics = useLoaderData();
 
     return (
-        // eslint-disable-next-line react/jsx-no-constructed-context-values
         <QuizContext.Provider value={quizTopics}>
             <div className="flex flex-col justify-between min-h-screen ">
-                <div >
+                <div>
                     <Navbar />
                     <div className="container">
                         <Outlet />
                     </div>
                 </div>
-                <div className="">
+                <div className="mt-20">
                     <Footer />
                 </div>
             </div>

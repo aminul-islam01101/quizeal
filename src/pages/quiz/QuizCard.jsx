@@ -13,6 +13,7 @@ const QuizCard = ({
     const [quiz, setQuiz] = useState('');
     const [visibility, setVisibility] = useState(false);
     const [disabled, setDisabled] = useState(false);
+    const [radioColor, setRadioColor] = useState('bg-gray-500 ');
 
     const changeHandler = (event) => {
         setDisabled(true);
@@ -22,9 +23,11 @@ const QuizCard = ({
         if (event.target.value === correctAnswer) {
             toast.success('correct!');
             setCorrectCount((prev) => prev + 1);
+            setRadioColor('bg-green-500');
         } else {
             toast.error('wrong!');
             setWrongCount((prev) => prev + 1);
+            setRadioColor('bg-rose-500');
         }
     };
     const clickHandler = () => {
@@ -39,12 +42,12 @@ const QuizCard = ({
                 </p>
                 <FontAwesomeIcon icon={faEye} onClick={clickHandler} />
             </div>
-            <div className="grid grid-cols-2 gap-5 border">
+            <div className={`${radioColor} grid grid-cols-2 gap-5 border`}>
                 {options.map((option, index) => (
                     <div key={Math.random()}>
                         <div className="hover:bg-slate-400 flex items-center">
                             <input
-                                className="radio radio-primary disabled:bg-red-600 text-lime-500"
+                                className={`${radioColor} radio`}
                                 id={options[index]}
                                 type="radio"
                                 name={question}

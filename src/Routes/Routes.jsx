@@ -4,6 +4,7 @@ import Error from '../pages/Error';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login';
 import Quizzes from '../pages/quiz/Quizzes';
+import QuizTopics from '../pages/quiz/QuizTopics';
 import SignUp from '../pages/SignUp';
 import Statistics from '../pages/Statistics';
 
@@ -19,6 +20,7 @@ export const router = createBrowserRouter(
         >
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/quiz" element={<QuizTopics />} />
 
             <Route
                 path="/home/:id"
