@@ -1,7 +1,7 @@
 const blogData = [
     {
         id: 1,
-        src: 'https://ibb.co/9Wq0xRx',
+        src: 'https://i.ibb.co/QKyzHdR/Blog1.jpg',
         title: 'Blog-1',
         Topics: 'How does context API work? ',
         description:
@@ -9,7 +9,7 @@ const blogData = [
     },
     {
         id: 2,
-        src: 'https://ibb.co/xLMJGJw',
+        src: 'https://i.ibb.co/18Njdb7/Blog2.png',
         title: 'Blog-2',
         Topics: 'What is useREF Hook ?',
         description:
@@ -17,7 +17,7 @@ const blogData = [
     },
     {
         id: 3,
-        src: 'https://ibb.co/HxCYVKr',
+        src: 'https://i.ibb.co/LPmFSYz/Blog-3.webp',
         title: 'Blog-3',
         Topics: 'What is the purpose of react router? ',
         description:

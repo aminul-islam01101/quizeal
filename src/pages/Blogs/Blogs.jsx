@@ -32,11 +32,7 @@ const Blogs = () => (
 
             <div>
                 <div className="my-10">
-                    <section
-                        className="p-6 md:p-12 text-center md:text-left shadow-lg rounded-md"
-
-                        // }}
-                    >
+                    <section className="p-6 md:p-12 text-center md:text-left shadow-lg rounded-md">
                         <div className="flex justify-center">
                             <div className="max-w-3xl">
                                 <div className="block p-6 rounded-lg shadow-lg bg-white m-4">
