@@ -15,7 +15,7 @@ export default function App() {
 
     return (
         <div className="grid place-items-center text-center bg-slate-300">
-            <h2 className="mt-20"> Quiz Topics Vs Total question Visual representation</h2>
+            <h2 className="mt-20 text-4xl"> Quiz Topics Vs Total question Visual representation</h2>
             <BarChart className="mt-20" width={350} height={300} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis className="text-white" dataKey="name" />

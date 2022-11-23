@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import Avatar from '../../public/avatar.png';
+import Avatar from '../assets/images';
 import Logo from '../../public/logo.png';
 
 const Navbar = () => {
